@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duelo de Dados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="outline_style_dice.jpg" type="image/x-icon">
+
+</head>
+<body>
+
+    <h1>🎲 Duelo de Dados 🎲</h1>
+    <p>¡Lanza los dados y gana puntos! Cada jugador tiene 3 turnos.</p>
+
+    <p id="bestScore">Mejor Puntuación: 0</p>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>¡Bienvenido a Duelo de Dados!</h2>
+            <p>Personaliza los detalles del juego antes de comenzar.</p>
+            
+            <label for="player1Name">Nombre del Jugador 1:</label>
+            <input id="player1Name" type="text" placeholder="Jugador 1">
+
+            <label for="colorPlayer1">Color del Jugador 1:</label>
+            <select id="colorPlayer1">
+                <option value="#ffcccb">Rojo Claro</option>
+                <option value="#add8e6">Azul Claro</option>
+                <option value="#90ee90">Verde Claro</option>
+                <option value="#ffffcc">Amarillo Claro</option>
+            </select>
+
+            <label for="player2Name">Nombre del Jugador 2:</label>
+            <input id="player2Name" type="text" placeholder="Jugador 2">
+
+            <label for="colorPlayer2">Color del Jugador 2:</label>
+            <select id="colorPlayer2">
+                <option value="#ffcccb">Rojo Claro</option>
+                <option value="#add8e6">Azul Claro</option>
+                <option value="#90ee90">Verde Claro</option>
+                <option value="#ffffcc">Amarillo Claro</option>
+            </select>
+
+            <button id="startGame">Empezar Juego</button>
+        </div>
+    </div>
+
+    <main>
+        <div class="game-container">
+            <div class="player">
+                <h2>Jugador 1</h2>
+                <div id="dice1" class="dice" data-value="1"></div>
+                <p>Puntuación: <span id="score1">0</span></p>
+            </div>
+
+            <div class="panel">
+                <h2>Ronda <span id="round">1</span></h2>
+                <p> <span id="turn">Jugador 1</span></p>
+                <button id="rollDice">Lanzar Dado</button>
+                <button id="resetGame">Reiniciar</button>
+                <button id="resetBestScore">Reiniciar Mejor Puntuación</button>
+                <p id="winnerMessage"></p>
+            </div>
+
+            <div class="player">
+                <h2>Jugador 2</h2>
+                <div id="dice2" class="dice" data-value="1"></div>
+                <p>Puntuación: <span id="score2">0</span></p>
+            </div>
+        </div>
+    </main>
+
+    <button id="openHistorial">📜</button>
+
+    <div id="historialPanel">
+        <h2>Historial de Lanzamientos</h2>
+        <table id="history">
+            <tr>
+                <th>Jugador</th>
+                <th>Lanzamiento</th>
+            </tr>
+        </table>
+        <button id="clearHistory">🗑️</button>
+        <h3>Partidas Guardadas</h3>
+        <ul id="savedGames"></ul>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
